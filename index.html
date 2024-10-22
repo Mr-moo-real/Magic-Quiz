@@ -108,11 +108,11 @@
         // Define conversation stages
         const stages = [
             {
-                prompt: 'I want to appeal a ban from this server on behalf of my friend. They were banned 3 days ago and for something that they said they didnt do. Could anything be done about this?',
+                prompt: 'What should you do if someone submits a ticket regarding a NSFW topic?',
                 responses: [
-                    { text: 'Close the ticket', correct: false, incorrectFeedback: 'Not quite! This is the final step in completing a ticket.', nextStage: 1 },
-                    { text: 'Unban their friend', correct: false, incorrectFeedback: 'You should not unban someone without valid evidence! Moderation appeals should only be performed if valid evidence is found that they were wrongly banned/moderated', nextStage: 1 },
-                    { text: 'Claim the ticket', correct: true, feedback: 'Correct! When handling a ticket, claiming should always be the first action.', nextStage: 2 }
+                    { text: 'Close the ticket', correct: false, incorrectFeedback: 'You should never close a ticket without a valid reason to do so.', nextStage: 1 },
+                    { text: 'Ask them to remake the ticket in the sensitive category', correct: true, feedback: 'Correct! This allows for moderators who are alright with seeing sensitive photos/messages handle the ticket, and to respect those who arent.', nextStage: 1 },
+                    { text: 'Escalate the ticket to someone Admin+', correct: false, incorrectFeedback: 'An escalation is not necessary for the initial stages of a ticket like this (Unless the topic is extremely sensitive)', nextStage: 2 }
                 ]
             },
             {
@@ -124,11 +124,11 @@
                 ]
             },
             {
-                prompt: 'You claim the ticket using the provided button within the ticket.',
+                prompt: 'What should you do if an account is shown to have made false reports?',
                 responses: [
-                    { text: 'Escalate the ticket', correct: false, incorrectFeedback: 'While escalations are commonly required with moderation appeals, they are not always necessary.', nextStage: 4 },
-                    { text: 'Ask for the ID of the user who they are appealing on behalf of.', correct: true, feedback: 'Correct, having the ID of the user allows us to look into their case and determine whether or not the ban was justified.', nextStage: 3 },
-                    { text: 'Ask for a screenshot', correct: false, incorrectFeedback: 'Evidence is usually not required for a moderation appeal, as we are able to view all appropriate moderation logs and message history.', nextStage: 4 }
+                    { text: 'Close the ticket and ban them', correct: false, incorrectFeedback: 'Not quite. While it is correct to ban them, you should not do so until all appropriate processes have been carried out', nextStage: 4 },
+                    { text: '2nd reason', correct: true, feedback: 'Correct, having the ID of the user allows us to look into their case and determine whether or not the ban was justified.', nextStage: 3 },
+                    { text: 'correct reason', correct: false, incorrectFeedback: 'Evidence is usually not required for a moderation appeal, as we are able to view all appropriate moderation logs and message history.', nextStage: 4 }
                 ]
             },
             {
