@@ -98,7 +98,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="header">Ticket System Quiz</div>
+        <div class="header">Ticket System Quiz WORK IN PROGRESS</div>
         <div class="chat-window" id="chatWindow"></div>
         <div class="button-container" id="buttonContainer">
             <!-- Buttons will be dynamically added here -->
@@ -118,17 +118,17 @@
             {
                 prompt: 'Topic 2',
                 responses: [
-                    { text: 'answer 1', correct: true, feedback: 'meow', nextStage: 2 },
-                    { text: 'answer 2', correct: false, incorrectFeedback: 'There are no current reasons to escalate this ticket to an Admin+ at this stage.', nextStage: 2 },
-                    { text: 'answer 3', correct: false, incorrectFeedback: 'You might not need a screenshot if you can find evidence yourself.', nextStage: 2 }
+                    { text: 'answer 1', correct: true, feedback: 'feedback 1', nextStage: 2 },
+                    { text: 'answer 2', correct: false, incorrectFeedback: 'feedback 2', nextStage: 2 },
+                    { text: 'answer 3', correct: false, incorrectFeedback: 'feedback 3', nextStage: 2 }
                 ]
             },
             {
                 prompt: 'What should you do if an account is shown to have made false reports?',
                 responses: [
                     { text: 'Close the ticket and ban them', correct: false, incorrectFeedback: 'Not quite. While it is correct to ban them, you should not do so until all appropriate processes have been carried out', nextStage: 4 },
-                    { text: '2nd reason', correct: true, feedback: 'Correct, having the ID of the user allows us to look into their case and determine whether or not the ban was justified.', nextStage: 3 },
-                    { text: 'correct reason', correct: false, incorrectFeedback: 'Evidence is usually not required for a moderation appeal, as we are able to view all appropriate moderation logs and message history.', nextStage: 4 }
+                    { text: 'Ban the user', correct: false, incorrectFeedback: 'While it is correct to ban the user, there are usually other things that need to be done.', nextStage: 3 },
+                    { text: 'Ban the user and unban any accounts reported by them', correct: true, feedback: 'Correct! As the user is deemed untrustworthy, you should ban them and, provided there is no other solid evidence, you should unban any of the users who were banned as a result of their reports.', nextStage: 4 }
                 ]
             },
             {
